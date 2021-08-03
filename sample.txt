@@ -1,0 +1,30 @@
+interface Ethernet1
+ description Spine-1-et1/1
+ mtu 9214
+ no switchport
+ ip address 172.168.1.1/31
+
+interface Ethernet8/1
+ description ck428-et8/1
+ speed forced 40gfull
+ no switchport
+ ip address 172.168.1.10/31
+
+interface Loopback0
+ ip address 1.1.1.11/32
+
+ip prefix-list loopback
+ seq 10 permit 1.1.1.0/24 ge 24
+!
+route-map loopback permit 10
+ match ip address prefix-list loopback
+
+router bgp 65004
+neighbor SPINE peer-group
+ neighbor SPINE remote-as 65001
+ neighbor SPINE allowas-in 1
+ neighbor SPINE soft-reconfiguration inbound all
+ neighbor SPINE send-community
+ neighbor 172.168.1.0 peer-group SPINE
+ neighbor 172.168.1.11 remote-as 65003
+ redistribute connected route-map loopback
