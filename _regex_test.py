@@ -17,7 +17,7 @@ def interface_section():
 
     
     line_count = len(line)
-    for k in range(12,line_count): ### End Pointer for Nth interface block.
+    for k in range(interface_start_pointer[-1],line_count): ### End Pointer for Nth interface block.
         current_line = line[k]
         if current_line == '\n' :
             interface_end_pointer.append(k)
@@ -73,9 +73,11 @@ with open('sample.txt', 'r') as getter: ### Reading (and closing) the File : sam
     for k in range(len(interface_start_pointer)):
         interface_block(interface_start_pointer[k],interface_end_pointer[k])
 
-print(interfaces)
-
-        
+#print(interfaces)
+print(interface_start_pointer)
+print(interface_end_pointer)
+for k in interfaces:
+    print(k)        
 
     
 
