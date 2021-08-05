@@ -1,0 +1,28 @@
+user@host> show route table inet.0    
+inet.0: 12 destinations, 12 routes (11 active, 0 holddown, 1 hidden)
++ = Active Route, - = Last Active, * = Both
+
+0.0.0.0/0          *[Static/5] 00:51:57
+                    > to 172.16.5.254 via fxp0.0
+10.0.0.1/32         *[Direct/0] 00:51:58
+                    > via at-5/3/0.0
+10.0.0.2/32         *[Local/0] 00:51:58
+                     Local
+10.12.12.21/32     *[Local/0] 00:51:57
+                     Reject
+10.13.13.13/32     *[Direct/0] 00:51:58
+                    > via t3-5/2/1.0
+10.13.13.14/32     *[Local/0] 00:51:58
+                     Local
+10.13.13.21/32     *[Local/0] 00:51:58
+                     Local
+10.13.13.22/32     *[Direct/0] 00:33:59
+                    > via t3-5/2/0.0
+127.0.0.1/32        [Direct/0] 00:51:58
+                    > via lo0.0
+10.222.5.0/24     *[BGP/0] 00:51:58
+                    >  to 62.104.198.206 via ae3.8
+10.222.5.81/32    *[Local/0] 00:51:58
+                     Local
+2.57.190.0/24      *[BGP/170] 4w1d 15:10:58, MED 1234567895, localpref 100, from 62.104.191.210
+                    >  to 62.104.198.201 via ae3.0
