@@ -13,6 +13,16 @@ interface Ethernet8/1
 interface Loopback0
  ip address 1.1.1.11/32
 
+interface Loopback56
+ ip address 1.1.1.16/32
+
+interface Loopback560
+ ip address 1.1.1.17/32
+
+interface Loopback5
+ ip address 1.1.1.44/32
+ description testing
+
 ip prefix-list loopback
  seq 10 permit 1.1.1.0/24 ge 24
 !

@@ -34,6 +34,6 @@ _interfaces = [
 
 {code}
 
-*  When running the Python script the dictionary should be printed 
+* When running the Python script the dictionary should be printed 
 * the solution should work if more interfaces are added or deleted from the sample file
 * Commit it to your repo, onboarding branch 
